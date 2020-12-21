@@ -21,6 +21,76 @@ body{
     font-weight:bold;
     font-size:24px;
 }
+
+#crossword-wrapper{
+    background:url('images/content-bg.jpg');
+    height:auto;
+    width:100%;
+    margin-top:20px;
+    text-align:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:solid 5px #b64340;
+    border-radius:8px;
+    padding-bottom:15px;
+    margin-bottom:10px;
+    padding-top:10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#crossword-wrapper .puzzle1-code-input{
+    margin-top: 4px;
+}
+.crossword-hints-wrapper{
+    background:white;
+    color:black;
+    height:629px;
+    width:70%;
+    margin-top:20px;
+    border:solid 5px #b64340;
+    border-radius:8px;
+    padding-bottom:15px;
+    margin-bottom:0px;
+    padding-top:20px;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.crossword-hints-wrapper ul{
+    list-style-type: none;
+    display: inline-block;
+    padding-left:10px;
+}
+/* crossword-input-hide */
+.cih{
+    background:transparent;
+    border:none;
+    pointer-events: none;
+}
+.correct-bg{
+    background:rgb(52, 182, 52);
+}
+.puzzle1-code-input div{
+    display:inline-block;
+    position: relative;
+}
+.puzzle1-code-input span{
+    font-size:13px;
+    position: absolute;
+    left:8px;
+    top:6px;
+}
+.hintlist-wrapper{
+    display:flex;
+    flex-direction: column;
+}
+.hintlist-wrapper input{
+    margin-left:2px;
+}
+#crossword-title{
+    padding-top:0px;
+    line-height:1.5;
+}
 /************************************** HOME ***********************************/
 
 .welcome-title{
