@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Find the Key!</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="main.css" type="text/css" />
+        <link rel="icon" href="images/favicon.png">
+    </head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-4 crossword-hints-wrapper">
+                <div id="crossword-title" class="puzzle1-title ml-3">Crossword Time</div>
+                <div class="puzzle1-title2 pl-3">It's a crossword PUZZLE, finish it to move on.</div>
+                <div class="hintlist-wrapper">
+                    <ul>
+                        <li><strong>ACROSS</strong></li>
+                        <li class="acrosshint1">1. poopy boy <input type="checkbox"></li>
+                        <li class="acrosshint2">2. santa monica ___ <input type="checkbox"></li>
+                        <li class="acrosshint3">3. rings <input type="checkbox"></li>
+                        <li class="acrosshint4">4. pet for house <input type="checkbox"></li>
+                        <li class="acrosshint5">5. moana ___ <input type="checkbox"></li>
+                        <li class="acrosshint6">6. mt hood waterfall <input type="checkbox"></li>
+                    </ul>
+                    <ul>
+                        <li><strong>DOWN</strong></li>
+                        <li class="downhint1">1. alma mater <input type="checkbox"></li>
+                        <li class="downhint2">2. home <input type="checkbox"></li>
+                        <li class="downhint3">3. fav lake <input type="checkbox"></li>
+                        <li class="downhint4">4. tuna face <input type="checkbox"></li>
+                        <li class="downhint5">5. little tresi <input type="checkbox"></li>
+                        <li class="downhint6">6. mt hood deer <input type="checkbox"></li>
+                        <li class="downhint7">7. lemongrass chicken <input type="checkbox"></li>
+                        <li class="downhint8">8. chocolate caramel <input type="checkbox"></li>
+                    </ul>
+                </div>
+            </div>
+            <div id="crossword-wrapper" class="col-8 content-wrapper">
+                <div class="puzzle1-wrapper">
+                   
+                    <div class="puzzle1-code-input">
+                        <div>
+                            <input id="puzzle1-input1x1" type="text" maxlength="1">
+                            <span>1</span>
+                        </div>
+                        <input id="puzzle1-input1x2" type="text" maxlength="1">
+                        <input id="puzzle1-input1x3" type="text" maxlength="1">
+                        <input id="puzzle1-input1x4" type="text" maxlength="1">
+                        <div>
+                            <input id="puzzle1-input1x5" type="text" maxlength="1">
+                            <span>4</span>
+                        </div>
+                        <input id="puzzle1-input1x6" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input1x7" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input1x8" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <div>
+                            <input id="puzzle1-input1x9" type="text" maxlength="1">
+                            <span>2</span>
+                        </div>
+                        <input id="puzzle1-input1x10" type="text" maxlength="1">
+                        <input id="puzzle1-input1x11" type="text" maxlength="1">
+                        <div>
+                            <input id="puzzle1-input1x12" type="text" maxlength="1">
+                            <span>5</span>
+                        </div>
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <input id="puzzle1-input2x1" type="text" maxlength="1">
+                        <input id="puzzle1-input2x2" class="cih" readonly tabindex="-1"  type="text" maxlength="1">
+                        <input id="puzzle1-input2x3" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input2x4" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input2x5" type="text" maxlength="1">
+                        <input id="puzzle1-input2x6" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input2x7" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input2x8" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input2x9" type="text" maxlength="1">
+                        <input id="puzzle1-input2x10" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input2x11" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input2x12" type="text" maxlength="1">
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <input id="puzzle1-input3x1" type="text" maxlength="1">
+                        <input id="puzzle1-input3x2" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <div>
+                            <input id="puzzle1-input3x3" type="text" maxlength="1">
+                            <span>3</span>
+                        </div>                        
+                        <input id="puzzle1-input3x4" type="text" maxlength="1">
+                        <input id="puzzle1-input3x5" type="text" maxlength="1">
+                        <input id="puzzle1-input3x6" type="text" maxlength="1">
+                        <div>
+                            <input id="puzzle1-input3x7" type="text" maxlength="1">
+                            <span>6</span>
+                        </div>
+                        <input id="puzzle1-input3x8" type="text" maxlength="1">
+                        <input id="puzzle1-input3x9" type="text" maxlength="1">
+                        <input id="puzzle1-input3x10" type="text" maxlength="1">
+                        <input id="puzzle1-input3x11" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input3x12" type="text" maxlength="1">
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <input id="puzzle1-input4x1" type="text" maxlength="1">
+                        <input id="puzzle1-input4x2" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input4x3" type="text" maxlength="1">
+                        <input id="puzzle1-input4x4" class="cih" readonly tabindex="-1" ype="text" maxlength="1">
+                        <input id="puzzle1-input4x5" type="text" maxlength="1">
+                        <input id="puzzle1-input4x6" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input4x7" type="text" maxlength="1">
+                        <input id="puzzle1-input4x8" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input4x9" type="text" maxlength="1">
+                        <input id="puzzle1-input4x10" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input4x11" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input4x12" type="text" maxlength="1">
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <input id="puzzle1-input5x1" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input5x2" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input5x3" type="text" maxlength="1">
+                        <input id="puzzle1-input5x4" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input5x5" type="text" maxlength="1">
+                        <input id="puzzle1-input5x6" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input5x7" type="text" maxlength="1">
+                        <input id="puzzle1-input5x8" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input5x9" type="text" maxlength="1">
+                        <input id="puzzle1-input5x10" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input5x11" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input5x12" type="text" maxlength="1">
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <div>
+                            <input id="puzzle1-input6x1" type="text" maxlength="1">
+                            <span>4</span>
+                        </div>
+                        <input id="puzzle1-input6x2" type="text" maxlength="1">
+                        <input id="puzzle1-input6x3" type="text" maxlength="1">
+                        <input id="puzzle1-input6x4" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input6x5" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input6x6" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input6x7" type="text" maxlength="1">
+                        <input id="puzzle1-input6x8" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input6x9" type="text" maxlength="1">
+                        <input id="puzzle1-input6x10" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input6x11" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input6x12" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <input id="puzzle1-input7x1" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input7x2" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input7x3" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <div>
+                            <input id="puzzle1-input7x4" type="text" maxlength="1">
+                            <span>7</span>
+                        </div>
+                        <input id="puzzle1-input7x5" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input7x6" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input7x7" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input7x8" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input7x9" type="text" maxlength="1">
+                        <input id="puzzle1-input7x10" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input7x11" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input7x12" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <input id="puzzle1-input8x1" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input8x2" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <div>
+                            <input id="puzzle1-input8x3" type="text" maxlength="1">
+                            <span>5</span>
+                        </div>
+                        <input id="puzzle1-input8x4" type="text" maxlength="1">
+                        <input id="puzzle1-input8x5" type="text" maxlength="1">
+                        <input id="puzzle1-input8x6" type="text" maxlength="1">
+                        <input id="puzzle1-input8x7" type="text" maxlength="1">
+                        <input id="puzzle1-input8x8" type="text" maxlength="1">
+                        <input id="puzzle1-input8x9" type="text" maxlength="1">
+                        <input id="puzzle1-input8x10" type="text" maxlength="1">
+                        <div>
+                            <input id="puzzle1-input8x11" type="text" maxlength="1">
+                            <span>8</span>
+                        </div>
+                        <input id="puzzle1-input8x12" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <input id="puzzle1-input9x1" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input9x2" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input9x3" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input9x4" type="text" maxlength="1">
+                        <input id="puzzle1-input9x5" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input9x6" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input9x7" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input9x8" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input9x9" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input9x10" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input9x11" type="text" maxlength="1">
+                        <input id="puzzle1-input9x12" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <input id="puzzle1-input10x1" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <div>
+                            <input id="puzzle1-input10x2" type="text" maxlength="1">
+                            <span>6</span>
+                        </div>
+                        <input id="puzzle1-input10x3" type="text" maxlength="1">
+                        <input id="puzzle1-input10x4" type="text" maxlength="1">
+                        <input id="puzzle1-input10x5" type="text" maxlength="1">
+                        <input id="puzzle1-input10x6" type="text" maxlength="1">
+                        <input id="puzzle1-input10x7" type="text" maxlength="1">
+                        <input id="puzzle1-input10x8" type="text" maxlength="1">
+                        <input id="puzzle1-input10x9" type="text" maxlength="1">
+                        <input id="puzzle1-input10x10" type="text" maxlength="1">
+                        <input id="puzzle1-input10x11" type="text" maxlength="1">
+                        <input id="puzzle1-input10x12" type="text" maxlength="1">
+                    </div>
+                    <div class="puzzle1-code-input">
+                        <input id="puzzle1-input11x1" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input11x2" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input11x3" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input11x4" type="text" maxlength="1">
+                        <input id="puzzle1-input11x5" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input11x6" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input11x7" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input11x8" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input11x9" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input11x10" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                        <input id="puzzle1-input11x11" type="text" maxlength="1">
+                        <input id="puzzle1-input11x12" class="cih" readonly tabindex="-1" type="text" maxlength="1">
+                    </div>            
+                </div>
+                <div class="congrats">
+                    <div class="congrats-title">Congrats!</div>
+                    <img src="images/unlocked.png" alt="">
+                    <div class="puzzle1-congrats-btn">
+                        <a href="puzzle5.html">Next Puzzle</a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        $("input").keyup(function(){
+
+            var val1x1 = $("#puzzle1-input1x1").val();
+            if(val1x1 === "c") {
+                $("#puzzle1-input1x1").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input1x1").removeClass("correct-bg");
+            }
+
+            var val1x2 = $("#puzzle1-input1x2").val();
+            if(val1x2 === "h") {
+                $("#puzzle1-input1x2").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input1x2").removeClass("correct-bg");
+            }
+
+            var val1x3 = $("#puzzle1-input1x3").val();
+            if(val1x3 === "i") {
+                $("#puzzle1-input1x3").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input1x3").removeClass("correct-bg");
+            }
+
+            var val1x4 = $("#puzzle1-input1x4").val();
+            if(val1x4 === "p") {
+                $("#puzzle1-input1x4").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input1x4").removeClass("correct-bg");
+            }
+
+            var val1x5 = $("#puzzle1-input1x5").val();
+            if(val1x5 === "s") {
+                $("#puzzle1-input1x5").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input1x5").removeClass("correct-bg");
+            }
+
+            var val1x9 = $("#puzzle1-input1x9").val();
+            if(val1x9 === "p") {
+                $("#puzzle1-input1x9").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input1x9").removeClass("correct-bg");
+            }
+
+            var val1x10 = $("#puzzle1-input1x10").val();
+            if(val1x10 === "i") {
+                $("#puzzle1-input1x10").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input1x10").removeClass("correct-bg");
+            }
+
+            var val1x11 = $("#puzzle1-input1x11").val();
+            if(val1x11 === "e") {
+                $("#puzzle1-input1x11").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input1x11").removeClass("correct-bg");
+            }
+
+            var val1x12 = $("#puzzle1-input1x12").val();
+            if(val1x12 === "r") {
+                $("#puzzle1-input1x12").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input1x12").removeClass("correct-bg");
+            }
+
+
+            var val2x1 = $("#puzzle1-input2x1").val();
+            if(val2x1 === "s") {
+                $("#puzzle1-input2x1").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input2x1").removeClass("correct-bg");
+            }
+
+            var val2x5 = $("#puzzle1-input2x5").val();
+            if(val2x5 === "a") {
+                $("#puzzle1-input2x5").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input2x5").removeClass("correct-bg");
+            }
+
+            var val2x9 = $("#puzzle1-input2x9").val();
+            if(val2x9 === "o") {
+                $("#puzzle1-input2x9").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input2x9").removeClass("correct-bg");
+            }
+
+            var val2x12= $("#puzzle1-input2x12").val();
+            if(val2x12 === "a") {
+                $("#puzzle1-input2x12").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input2x12").removeClass("correct-bg");
+            }
+
+
+            var val3x1 = $("#puzzle1-input3x1").val();
+            if(val3x1 === "u") {
+                $("#puzzle1-input3x1").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x1").removeClass("correct-bg");
+            }
+
+            var val3x3 = $("#puzzle1-input3x3").val();
+            if(val3x3 === "h") {
+                $("#puzzle1-input3x3").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x3").removeClass("correct-bg");
+            }
+
+            var val3x4 = $("#puzzle1-input3x4").val();
+            if(val3x4 === "e") {
+                $("#puzzle1-input3x4").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x4").removeClass("correct-bg");
+            }
+
+            var val3x5 = $("#puzzle1-input3x5").val();
+            if(val3x5 === "l") {
+                $("#puzzle1-input3x5").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x5").removeClass("correct-bg");
+            }
+
+            var val3x6 = $("#puzzle1-input3x6").val();
+            if(val3x6 === "z") {
+                $("#puzzle1-input3x6").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x6").removeClass("correct-bg");
+            }
+
+            var val3x7 = $("#puzzle1-input3x7").val();
+            if(val3x7 === "b") {
+                $("#puzzle1-input3x7").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x7").removeClass("correct-bg");
+            }
+
+            var val3x8 = $("#puzzle1-input3x8").val();
+            if(val3x8 === "e") {
+                $("#puzzle1-input3x8").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x8").removeClass("correct-bg");
+            }
+
+            var val3x9 = $("#puzzle1-input3x9").val();
+            if(val3x9 === "r") {
+                $("#puzzle1-input3x9").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x9").removeClass("correct-bg");
+            }
+
+            var val3x10 = $("#puzzle1-input3x10").val();
+            if(val3x10 === "g") {
+                $("#puzzle1-input3x10").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x10").removeClass("correct-bg");
+            }
+
+            var val3x12 = $("#puzzle1-input3x12").val();
+            if(val3x12 === "f") {
+                $("#puzzle1-input3x12").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input3x12").removeClass("correct-bg");
+            }
+
+
+
+            var val4x1 = $("#puzzle1-input4x1").val();
+            if(val4x1 === "n") {
+                $("#puzzle1-input4x1").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input4x1").removeClass("correct-bg");
+            }
+
+            var val4x3 = $("#puzzle1-input4x3").val();
+            if(val4x3 === "a") {
+                $("#puzzle1-input4x3").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input4x3").removeClass("correct-bg");
+            }
+
+            var val4x5 = $("#puzzle1-input4x5").val();
+            if(val4x5 === "s") {
+                $("#puzzle1-input4x5").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input4x5").removeClass("correct-bg");
+            }
+            var val4x7 = $("#puzzle1-input4x7").val();
+            if(val4x7 === "u") {
+                $("#puzzle1-input4x7").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input4x7").removeClass("correct-bg");
+            }
+
+            var val4x9 = $("#puzzle1-input4x9").val();
+            if(val4x9 === "t") {
+                $("#puzzle1-input4x9").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input4x9").removeClass("correct-bg");
+            }
+
+            var val4x12 = $("#puzzle1-input4x12").val();
+            if(val4x12 === "f") {
+                $("#puzzle1-input4x12").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input4x12").removeClass("correct-bg");
+            }
+
+
+            var val5x3 = $("#puzzle1-input5x3").val();
+            if(val5x3 === "g") {
+                $("#puzzle1-input5x3").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input5x3").removeClass("correct-bg");
+            }
+
+            var val5x5 = $("#puzzle1-input5x5").val();
+            if(val5x5 === "a") {
+                $("#puzzle1-input5x5").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input5x5").removeClass("correct-bg");
+            }
+
+            var val5x7 = $("#puzzle1-input5x7").val();
+            if(val5x7 === "c") {
+                $("#puzzle1-input5x7").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input5x7").removeClass("correct-bg");
+            }
+
+            var val5x9 = $("#puzzle1-input5x9").val();
+            if(val5x9 === "l") {
+                $("#puzzle1-input5x9").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input5x9").removeClass("correct-bg");
+            }
+
+            var val5x12 = $("#puzzle1-input5x12").val();
+            if(val5x12 === "i") {
+                $("#puzzle1-input5x12").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input5x12").removeClass("correct-bg");
+            }
+
+
+            var val6x1 = $("#puzzle1-input6x1").val();
+            if(val6x1 === "d") {
+                $("#puzzle1-input6x1").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input6x1").removeClass("correct-bg");
+            }
+
+            var val6x2 = $("#puzzle1-input6x2").val();
+            if(val6x2 === "o") {
+                $("#puzzle1-input6x2").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input6x2").removeClass("correct-bg");
+            }
+
+            var val6x3 = $("#puzzle1-input6x3").val();
+            if(val6x3 === "g") {
+                $("#puzzle1-input6x3").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input6x3").removeClass("correct-bg");
+            }
+
+            var val6x7 = $("#puzzle1-input6x7").val();
+            if(val6x7 === "k") {
+                $("#puzzle1-input6x7").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input6x7").removeClass("correct-bg");
+            }
+
+            var val6x9 = $("#puzzle1-input6x9").val();
+            if(val6x9 === "a") {
+                $("#puzzle1-input6x9").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input6x9").removeClass("correct-bg");
+            }
+
+
+            var val7x4 = $("#puzzle1-input7x4").val();
+            if(val7x4 === "b") {
+                $("#puzzle1-input7x4").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input7x4").removeClass("correct-bg");
+            }
+            var val7x9 = $("#puzzle1-input7x9").val();
+            if(val7x9 === "n") {
+                $("#puzzle1-input7x9").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input7x9").removeClass("correct-bg");
+            }
+
+            var val8x3 = $("#puzzle1-input8x3").val();
+            if(val8x3 === "s") {
+                $("#puzzle1-input8x3").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input8x3").removeClass("correct-bg");
+            }
+
+            var val8x4 = $("#puzzle1-input8x4").val();
+            if(val8x4 === "u") {
+                $("#puzzle1-input8x4").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input8x4").removeClass("correct-bg");
+            }
+            
+            var val8x5 = $("#puzzle1-input8x5").val();
+            if(val8x5 === "r") {
+                $("#puzzle1-input8x5").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input8x5").removeClass("correct-bg");
+            }
+            
+            var val8x6 = $("#puzzle1-input8x6").val();
+            if(val8x6 === "f") {
+                $("#puzzle1-input8x6").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input8x6").removeClass("correct-bg");
+            }
+            
+            var val8x7 = $("#puzzle1-input8x7").val();
+            if(val8x7 === "r") {
+                $("#puzzle1-input8x7").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input8x7").removeClass("correct-bg");
+            }
+            
+            var val8x8 = $("#puzzle1-input8x8").val();
+            if(val8x8 === "i") {
+                $("#puzzle1-input8x8").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input8x8").removeClass("correct-bg");
+            }
+            
+            var val8x9 = $("#puzzle1-input8x9").val();
+            if(val8x9 === "d") {
+                $("#puzzle1-input8x9").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input8x9").removeClass("correct-bg");
+            }
+            
+            var val8x10 = $("#puzzle1-input8x10").val();
+            if(val8x10 === "e") {
+                $("#puzzle1-input8x10").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input8x10").removeClass("correct-bg");
+            }
+            
+            var val8x11 = $("#puzzle1-input8x11").val();
+            if(val8x11 === "r") {
+                $("#puzzle1-input8x11").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input8x11").removeClass("correct-bg");
+            }
+            
+
+            var val9x4 = $("#puzzle1-input9x4").val();
+            if(val9x4 === "n") {
+                $("#puzzle1-input9x4").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input9x4").removeClass("correct-bg");
+            }
+            
+            var val9x11 = $("#puzzle1-input9x11").val();
+            if(val9x11 === "o") {
+                $("#puzzle1-input9x11").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input9x11").removeClass("correct-bg");
+            }
+            
+
+            var val10x2 = $("#puzzle1-input10x2").val();
+            if(val10x2 === "r") {
+                $("#puzzle1-input10x2").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x2").removeClass("correct-bg");
+            }
+            
+            var val10x3 = $("#puzzle1-input10x3").val();
+            if(val10x3 === "a") {
+                $("#puzzle1-input10x3").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x3").removeClass("correct-bg");
+            }
+            
+            var val10x4 = $("#puzzle1-input10x4").val();
+            if(val10x4 === "m") {
+                $("#puzzle1-input10x4").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x4").removeClass("correct-bg");
+            }
+            
+            var val10x5 = $("#puzzle1-input10x5").val();
+            if(val10x5 === "o") {
+                $("#puzzle1-input10x5").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x5").removeClass("correct-bg");
+            }
+            
+            var val10x6 = $("#puzzle1-input10x6").val();
+            if(val10x6 === "n") {
+                $("#puzzle1-input10x6").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x6").removeClass("correct-bg");
+            }
+            
+            var val10x7 = $("#puzzle1-input10x7").val();
+            if(val10x7 === "a") {
+                $("#puzzle1-input10x7").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x7").removeClass("correct-bg");
+            }
+            
+            var val10x8 = $("#puzzle1-input10x8").val();
+            if(val10x8 === "f") {
+                $("#puzzle1-input10x8").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x8").removeClass("correct-bg");
+            }
+            
+            var val10x9 = $("#puzzle1-input10x9").val();
+            if(val10x9 === "a") {
+                $("#puzzle1-input10x9").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x9").removeClass("correct-bg");
+            }
+            
+            var val10x10 = $("#puzzle1-input10x10").val();
+            if(val10x10 === "l") {
+                $("#puzzle1-input10x10").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x10").removeClass("correct-bg");
+            }
+            
+            var val10x11 = $("#puzzle1-input10x11").val();
+            if(val10x11 === "l") {
+                $("#puzzle1-input10x11").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x11").removeClass("correct-bg");
+            }
+            
+            var val10x12 = $("#puzzle1-input10x12").val();
+            if(val10x12 === "s") {
+                $("#puzzle1-input10x12").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input10x12").removeClass("correct-bg");
+            }
+            
+
+            var val11x4 = $("#puzzle1-input11x4").val();
+            if(val11x4 === "e") {
+                $("#puzzle1-input11x4").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input11x4").removeClass("correct-bg");
+            }
+            
+            var val11x11 = $("#puzzle1-input11x11").val();
+            if(val11x11 === "o") {
+                $("#puzzle1-input11x11").addClass("correct-bg");
+            }
+            else{
+                $("#puzzle1-input11x11").removeClass("correct-bg");
+            }
+            
+
+            if(val1x1 === "c" && val1x2 === "h" && val1x3=== "i" && val1x4 === "p" && val1x5 === "s" && val1x9 === "p" && val1x10 === "i" && val1x11 === "e" && val1x12 === "r"  && val2x1 === "s" && val2x5 === "a" && val2x9 === "o" && val2x12 === "a" && val3x1 === "u" && val3x3 === "h" && val3x4 === "e" && val3x5 === "l" && val3x6 === "z" && val3x7 === "b" && val3x8 === "e" && val3x9 === "r" && val3x10 === "g" && val3x12 === "f" && val4x1 === "n" && val4x3 === "a" && val4x5 === "s" && val4x7 === "u" && val4x9 === "t" && val4x12 === "f" && val5x3 === "g" && val5x5 === "a" && val5x7 === "c" && val5x9 === "l" && val5x12 === "i" && val6x1 === "d" && val6x2 === "o" && val6x3 === "g" && val6x7 === "k" && val6x9 === "a" && val7x4 === "b" && val7x9 === "n" && val8x3 === "s" && val8x4 === "u" && val8x5 === "r" && val8x6 === "f" && val8x7 === "r" && val8x8 === "i" && val8x9 === "d" && val8x10 === "e" && val8x11 === "r" && val9x4 === "n" && val9x11 === "o" && val10x2 === "r" && val10x3 === "a" && val10x4 === "m" && val10x5 === "o" && val10x6 === "n" && val10x7 === "a" && val10x8 === "f" && val10x9 === "a" && val10x10 === "l" && val10x11 === "l" && val10x12 === "s" && val11x4 === "e" && val11x11 === "o"){
+                $(".puzzle1-wrapper").hide();
+                $(".crossword-hints-wrapper").hide();
+                $(".congrats").show();
+                $("#crossword-wrapper").css({"margin-left":"auto", "margin-right":"auto", "padding-bottom":"50px", "margin-top":"50px"})
+            }
+        })
+    </script>
+    <script>
+        $(".acrosshint1 input").click(function(){
+            if($(".acrosshint1 input").prop("checked")){
+                $(".acrosshint1").css("text-decoration","line-through");
+            }
+            else{
+                $(".acrosshint1").css("text-decoration","none");
+            }
+        })
+        $(".acrosshint2 input").click(function(){
+            if($(".acrosshint2 input").prop("checked")){
+                $(".acrosshint2").css("text-decoration","line-through");
+            }
+            else{
+                $(".acrosshint2").css("text-decoration","none");
+            }
+        })
+        $(".acrosshint3 input").click(function(){
+            if($(".acrosshint3 input").prop("checked")){
+                $(".acrosshint3").css("text-decoration","line-through");
+            }
+            else{
+                $(".acrosshint3").css("text-decoration","none");
+            }
+        })
+        $(".acrosshint4 input").click(function(){
+            if($(".acrosshint4 input").prop("checked")){
+                $(".acrosshint4").css("text-decoration","line-through");
+            }
+            else{
+                $(".acrosshint4").css("text-decoration","none");
+            }
+        })
+        $(".acrosshint5 input").click(function(){
+            if($(".acrosshint5 input").prop("checked")){
+                $(".acrosshint5").css("text-decoration","line-through");
+            }
+            else{
+                $(".acrosshint5").css("text-decoration","none");
+            }
+        })
+        $(".acrosshint6 input").click(function(){
+            if($(".acrosshint6 input").prop("checked")){
+                $(".acrosshint6").css("text-decoration","line-through");
+            }
+            else{
+                $(".acrosshint6").css("text-decoration","none");
+            }
+        })
+        $(".downhint1 input").click(function(){
+            if($(".downhint1 input").prop("checked")){
+                $(".downhint1").css("text-decoration","line-through");
+            }
+            else{
+                $(".downhint1").css("text-decoration","none");
+            }
+        })
+        $(".downhint2 input").click(function(){
+            if($(".downhint2 input").prop("checked")){
+                $(".downhint2").css("text-decoration","line-through");
+            }
+            else{
+                $(".downhint2").css("text-decoration","none");
+            }
+        })
+        $(".downhint3 input").click(function(){
+            if($(".downhint3 input").prop("checked")){
+                $(".downhint3").css("text-decoration","line-through");
+            }
+            else{
+                $(".downhint3").css("text-decoration","none");
+            }
+        })
+        $(".downhint4 input").click(function(){
+            if($(".downhint4 input").prop("checked")){
+                $(".downhint4").css("text-decoration","line-through");
+            }
+            else{
+                $(".downhint4").css("text-decoration","none");
+            }
+        })
+        $(".downhint5 input").click(function(){
+            if($(".downhint5 input").prop("checked")){
+                $(".downhint5").css("text-decoration","line-through");
+            }
+            else{
+                $(".downhint5").css("text-decoration","none");
+            }
+        })
+        $(".downhint6 input").click(function(){
+            if($(".downhint6 input").prop("checked")){
+                $(".downhint6").css("text-decoration","line-through");
+            }
+            else{
+                $(".downhint6").css("text-decoration","none");
+            }
+        })
+        $(".downhint7 input").click(function(){
+            if($(".downhint7 input").prop("checked")){
+                $(".downhint7").css("text-decoration","line-through");
+            }
+            else{
+                $(".downhint7").css("text-decoration","none");
+            }
+        })
+        $(".downhint8 input").click(function(){
+            if($(".downhint8 input").prop("checked")){
+                $(".downhint8").css("text-decoration","line-through");
+            }
+            else{
+                $(".downhint8").css("text-decoration","none");
+            }
+        })
+        
+
+        
+    </script>
+</body>
+</html>

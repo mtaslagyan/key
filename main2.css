@@ -1,0 +1,205 @@
+body{
+    background: url('images/xmas-bg.jpg');
+    background-size: cover;
+    background-position-y: 45%;
+}
+.content-wrapper{
+    background:url('images/content-bg.jpg');
+    height:400px;
+    width:100%;
+    margin-top:130px;
+    text-align:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:solid 5px #b64340;
+    border-radius:8px;
+}
+#crossword-wrapper{
+    background:url('images/content-bg.jpg');
+    height:auto;
+    width:100%;
+    margin-top:20px;
+    text-align:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border:solid 5px #b64340;
+    border-radius:8px;
+    padding-bottom:15px;
+    margin-bottom:10px;
+    padding-top:10px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+#crossword-wrapper .puzzle1-code-input{
+    margin-top: 4px;
+}
+.crossword-hints-wrapper{
+    background:white;
+    color:black;
+    height:629px;
+    width:70%;
+    margin-top:20px;
+    border:solid 5px #b64340;
+    border-radius:8px;
+    padding-bottom:15px;
+    margin-bottom:0px;
+    padding-top:20px;
+    border-right: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.crossword-hints-wrapper ul{
+    list-style-type: none;
+    display: inline-block;
+    padding-left:10px;
+}
+/* crossword-input-hide */
+.cih{
+    background:transparent;
+    border:none;
+    pointer-events: none;
+}
+.correct-bg{
+    background:rgb(52, 182, 52);
+}
+.puzzle1-code-input div{
+    display:inline-block;
+    position: relative;
+}
+.puzzle1-code-input span{
+    font-size:13px;
+    position: absolute;
+    left:8px;
+    top:6px;
+}
+.hintlist-wrapper{
+    display:flex;
+    flex-direction: column;
+}
+.hintlist-wrapper input{
+    margin-left:2px;
+}
+/************************************** HOME ***********************************/
+
+.welcome-title{
+    font-size:36px;
+    font-weight:bold;
+    padding-top:50px;
+    padding-bottom:10px;
+    font-family:'Mountains of Christmas';
+    color:#b64340;
+}
+.welcome-title2{
+    font-size:20px;
+    padding: 0px 100px;
+    font-family: 'Ubuntu';
+}
+.welcome-wrapper a{
+    background:green;
+    padding:15px 32px;
+    color:white;
+    border-radius:10px;
+    transition: 0.1s ease-in-out;
+}
+.welcome-wrapper a:hover{
+    text-decoration:none;
+    background:#b64340;
+}
+.welcome-wrapper .btn-wrapper{
+    margin-top:100px;
+}
+
+
+/************************************** PUZZLE1 ***********************************/
+
+
+.puzzle1-title{
+    font-size:36px;
+    font-weight:bold;
+    padding-top:50px;
+    padding-bottom:10px;
+    font-family:'Mountains of Christmas';
+    color:#b64340;
+}
+#crossword-title{
+    padding-top:15px;
+}
+.puzzle1-title2{
+    font-size:20px;
+    padding: 0px 50px 20px 50px;
+    font-family: 'Ubuntu';
+}
+.puzzle1-wrapper button{
+    background:green;
+    padding:15px 32px;
+    color:white;
+    border-radius:10px;
+    transition: 0.1s ease-in-out;
+}
+
+.puzzle1-wrapper a:hover{
+    text-decoration:none;
+    background:#b64340;
+}
+.puzzle1-btn-wrapper{
+    margin-top:15px;
+}
+.puzzle1-btn-wrapper div{
+    color:red;
+}
+
+.puzzle1-code-input{
+    margin-top:0px;
+}
+.puzzle1-code-input input{
+    width:50px;
+    height:50px;
+    border-radius:10px;
+    font-size:28px;
+    text-align:center;
+}
+.congrats{
+    display:none;
+    text-align:center;
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:50px;
+}
+.congrats .congrats-title{
+    font-size:52px;
+    font-weight:bold;
+    padding-bottom:10px;
+    font-family:'Mountains of Christmas';
+    color:#b64340;
+}
+.congrats img{
+    width:100px;
+}
+.puzzle1-congrats-btn{
+    margin-top:30px;
+}
+.puzzle1-congrats-btn a{
+    background:green;
+    padding:15px 32px;
+    color:white;
+    border-radius:10px;
+    transition: 0.1s ease-in-out;
+}
+.puzzle1-congrats-btn a:hover{
+    text-decoration:none;
+    background:#b64340;
+}
+.puzzle1-btn-wrapper .oops{
+    display:none;
+    font-weight:bold;
+    margin-top:10px;
+}
+.oops-wrapper{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+.oops img{
+    width:40px;
+    margin-left:10px;
+}
