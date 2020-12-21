@@ -17,14 +17,16 @@
     <div class="container">
         <div class="row">
             <div class="offset-2 col-8 content-wrapper">
+                <div class="index">Puzzle 5/7</div>
                 <div class="puzzle1-wrapper">
-                    <div class="puzzle1-title">Directional (Uppercase Letter Only)</div>
-                    <div class="puzzle1-title2">Let's mix it up! Do you think the the Walgreens picture packet can be of more use? Remember, spaces don't count.</div>
-                    <div class="puzzle1-code-input">
-                        <input id="puzzle1-input1" type="text" maxlength="1">
-                        <input id="puzzle1-input2" type="text" maxlength="1">
-                        <input id="puzzle1-input3" type="text" maxlength="1">
-                        <input id="puzzle1-input4" type="text" maxlength="1">
+                    <div class="puzzle1-title">5 Letters</div>
+                    <div class="puzzle1-title2">Great Job Boobert, almost there! Btw, I bet you didn't see me hanging in the tree.</div>
+                    <div class="puzzle1-code-input codeinput">
+                        <input id="puzzle1-input1" class="puzzle5-color-bg1" type="text" maxlength="1">
+                        <input id="puzzle1-input2" class="puzzle5-color-bg2" type="text" maxlength="1">
+                        <input id="puzzle1-input3" class="puzzle5-color-bg3" type="text" maxlength="1">
+                        <input id="puzzle1-input4" class="puzzle5-color-bg4" type="text" maxlength="1">
+                        <input id="puzzle1-input5" class="puzzle5-color-bg5" type="text" maxlength="1">
                     </div>
                     <div class="puzzle1-btn-wrapper">
                         <button class="btn puzzle1-button">Enter Code</button>
@@ -39,8 +41,9 @@
                 <div class="congrats">
                     <div class="congrats-title">Congrats!</div>
                     <img src="images/unlocked.png" alt="">
+                    <div><strong>You found a mystery piece! <br> Check inside the fridge.</strong></div>
                     <div class="puzzle1-congrats-btn">
-                        <a href="puzzle5.html">Next Puzzle</a>
+                        <a href="puzzle6.html">Next Puzzle</a>
                     </div>
                 </div>
                 
@@ -55,10 +58,11 @@
             var val2 = $("#puzzle1-input2").val();
             var val3 = $("#puzzle1-input3").val();
             var val4 = $("#puzzle1-input4").val();
+            var val5 = $("#puzzle1-input5").val();
 
-            var triedcode = val1 + val2 + val3 + val4;
+            var triedcode = val1 + val2 + val3 + val4 + val5;
 
-            if(triedcode === 'RLUD'){
+            if(triedcode === 'RAFFI' || triedcode === 'raffi' || triedcode === 'Raffi'){
                 $(".puzzle1-wrapper").hide();
                 $(".congrats").show();
             }
@@ -66,7 +70,36 @@
                 $(".oops").show();
             }
         })
-
+        
+        var codeinput = document.getElementsByClassName("codeinput")[0];
+        codeinput.onkeyup = function(e) {
+            var target = e.srcElement || e.target;
+            var maxLength = parseInt(target.attributes["maxlength"].value, 10);
+            var myLength = target.value.length;
+            if (myLength >= maxLength) {
+                var next = target;
+                while (next = next.nextElementSibling) {
+                    if (next == null)
+                        break;
+                    if (next.tagName.toLowerCase() === "input") {
+                        next.focus();
+                        break;
+                    }
+                }
+            }
+            // Move to previous field if empty (user pressed backspace)
+            else if (myLength === 0) {
+                var previous = target;
+                while (previous = previous.previousElementSibling) {
+                    if (previous == null)
+                        break;
+                    if (previous.tagName.toLowerCase() === "input") {
+                        previous.focus();
+                        break;
+                    }
+                }
+            }
+        }
 
     </script>
 </body>

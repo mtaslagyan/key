@@ -17,10 +17,11 @@
     <div class="container">
         <div class="row">
             <div class="offset-2 col-8 content-wrapper">
+                <div class="index">Puzzle 1/7</div>
                 <div class="puzzle1-wrapper">
                     <div class="puzzle1-title">4 DIGIT CODE</div>
                     <div class="puzzle1-title2">Lets start with an easier one: chairs are helpful when seen from a different perspective.</div>
-                    <div class="puzzle1-code-input">
+                    <div class="puzzle1-code-input codeinput">
                         <input id="puzzle1-input1" type="text" maxlength="1">
                         <input id="puzzle1-input2" type="text" maxlength="1">
                         <input id="puzzle1-input3" type="text" maxlength="1">
@@ -67,7 +68,36 @@
             }
         })
 
-
+        var codeinput = document.getElementsByClassName("codeinput")[0];
+        codeinput.onkeyup = function(e) {
+            var target = e.srcElement || e.target;
+            var maxLength = parseInt(target.attributes["maxlength"].value, 10);
+            var myLength = target.value.length;
+            if (myLength >= maxLength) {
+                var next = target;
+                while (next = next.nextElementSibling) {
+                    if (next == null)
+                        break;
+                    if (next.tagName.toLowerCase() === "input") {
+                        next.focus();
+                        break;
+                    }
+                }
+            }
+            // Move to previous field if empty (user pressed backspace)
+            else if (myLength === 0) {
+                var previous = target;
+                while (previous = previous.previousElementSibling) {
+                    if (previous == null)
+                        break;
+                    if (previous.tagName.toLowerCase() === "input") {
+                        previous.focus();
+                        break;
+                    }
+                }
+            }
+        }
     </script>
+    
 </body>
 </html>

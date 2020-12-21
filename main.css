@@ -14,7 +14,13 @@ body{
     border:solid 5px #b64340;
     border-radius:8px;
 }
-
+.index{
+    text-align:left;
+    color:green;
+    font-family:'Mountains of Christmas';
+    font-weight:bold;
+    font-size:24px;
+}
 /************************************** HOME ***********************************/
 
 .welcome-title{
@@ -52,7 +58,7 @@ body{
 .puzzle1-title{
     font-size:36px;
     font-weight:bold;
-    padding-top:50px;
+    padding-top:5px;
     padding-bottom:10px;
     font-family:'Mountains of Christmas';
     color:#b64340;
@@ -96,7 +102,7 @@ body{
     text-align:center;
     margin-left:auto;
     margin-right:auto;
-    margin-top:50px;
+    margin-top:10px;
 }
 .congrats .congrats-title{
     font-size:52px;
@@ -135,4 +141,45 @@ body{
 .oops img{
     width:40px;
     margin-left:10px;
+}
+
+
+/* PUZZLE 5 */
+
+.puzzle5-color-bg1{
+    background:rgb(24, 150, 62);
+}
+
+.puzzle5-color-bg2{
+    background:rgb(245, 80, 15);
+}
+
+.puzzle5-color-bg3{
+    background:rgb(214, 5, 68);
+}
+
+.puzzle5-color-bg4{
+    background:rgb(13, 136, 185);
+}
+
+.puzzle5-color-bg5{
+    background:rgb(86, 4, 94);
+}
+
+/* Puzzle 7 */
+
+.puzzle1-title2 span{
+    color:rgb(89, 231, 23);
+}
+
+#final-tent{
+    width:200px;
+    margin-top:5px;
+}
+#final-title{
+    padding-top:0px;
+}
+
+.blacklight{
+    margin-top:50px;
 }
